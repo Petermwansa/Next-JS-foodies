@@ -19,6 +19,7 @@ export default function ImagePicker({ label, name }) {
         const file = e.target.files[0];
 
         if (!file) {
+            setPickedImage(null);
             return 
         }
 
@@ -50,6 +51,7 @@ export default function ImagePicker({ label, name }) {
                     // multiple 
                     ref={imageInputRef}
                     onChange={handleImageChange}
+                    required
                 />
                 <button 
                     className={classes.button} 
